@@ -21,7 +21,7 @@ public class NewsService {
 	 */
 	public News getNewsDetail(String newsId) {
 		INewsDao newsDao = new NewsDaoImpl();
-		News news = newsDao.getNews(newsId);
+		News news = newsDao.getNewsById(newsId);
 		return news;
 	}
 	

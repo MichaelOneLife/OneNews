@@ -16,7 +16,7 @@ public interface INewsDao {
 	 * @param id 新闻ID 
 	 * @return 新闻对象
 	 */
-	public News getNews(String id);
+	public News getNewsById(String id);
 	
 	/**
 	 * 根据状态获取所有新闻

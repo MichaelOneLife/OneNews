@@ -19,7 +19,7 @@
     </div>
     <div id="newsType">
     	<c:forEach items="${newsCategoryList }" var="categoryMap">
-    		<a href="${pageContext.request.contextPath }/CategoryNewsServlet?categoryId=${categoryMap.get('id') }">${categoryMap.get('name') }</a>
+    		<a href="${pageContext.request.contextPath }/NewsServlet?categoryId=${categoryMap.get('id') }&action=getNewsByCategory">${categoryMap.get('name') }</a>
 		</c:forEach>
     </div>
 </div>

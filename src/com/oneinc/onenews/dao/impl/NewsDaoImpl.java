@@ -16,7 +16,7 @@ import com.oneinc.onenews.util.DBUtil;
 public class NewsDaoImpl implements INewsDao {
 
 	@Override
-	public News getNews(String id) {
+	public News getNewsById(String id) {
 		QueryRunner queryRunner = DBUtil.getQueryRunner();
 		String sql = "SELECT * FROM news_news WHERE id=?";
 		News news = new News();

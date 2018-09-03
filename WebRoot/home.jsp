@@ -14,7 +14,7 @@
 		<ul>
 			<c:forEach items="${publishedNewsList }" var="newsMap">
 				<li>
-					<a href="${pageContext.request.contextPath }/NewsDetailServlet?id=${newsMap.get('id')}" target="_blank">${newsMap.get("title") }</a>
+					<a href="${pageContext.request.contextPath }/NewsServlet?id=${newsMap.get('id')}&action=getNewsDetail" target="_blank">${newsMap.get("title") }</a>
 				</li>
 			</c:forEach>
 		</ul>

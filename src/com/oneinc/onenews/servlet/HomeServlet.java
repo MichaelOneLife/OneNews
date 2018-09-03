@@ -18,12 +18,7 @@ public class HomeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doPost(request, response);
-	}
-
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
@@ -35,5 +30,4 @@ public class HomeServlet extends HttpServlet {
 		request.setAttribute("publishedNewsList", publishedNewsList);
 		request.getRequestDispatcher("home.jsp").forward(request, response);
 	}
-
 }
