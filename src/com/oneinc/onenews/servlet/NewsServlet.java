@@ -17,6 +17,9 @@ public class NewsServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * 根据新闻ID获取新闻详情
+	 */
 	public String getNewsDetail(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String newsId = request.getParameter("id");
@@ -26,6 +29,9 @@ public class NewsServlet extends BaseServlet {
 		return "news_detail.jsp";
 	}
 	
+	/**
+	 * 根据新闻分类获取新闻列表
+	 */
 	public String getNewsByCategory(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String categoryId = request.getParameter("categoryId");
