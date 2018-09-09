@@ -11,7 +11,7 @@ import lombok.ToString;
  */
 @Getter@Setter@ToString
 public class UserRole {
-	private Integer id;				//新闻状态ID
-	private String name;			//新闻状态名称
-	private String createtTime;		//创建时间
+	private Integer id;				// 新闻状态ID
+	private String name;			// 新闻状态名称
+	private String createtTime;		// 创建时间
 }

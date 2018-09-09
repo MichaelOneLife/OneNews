@@ -18,6 +18,7 @@
     	</div>
     </div>
     <div id="newsType">
+    	<a href="${pageContext.request.contextPath }/HomeServlet">首页</a>
     	<c:forEach items="${newsCategoryList }" var="categoryMap">
     		<a href="${pageContext.request.contextPath }/NewsServlet?categoryId=${categoryMap.get('id') }&action=getNewsByCategory">${categoryMap.get('name') }</a>
 		</c:forEach>

@@ -1,6 +1,7 @@
 package com.oneinc.onenews.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -23,8 +24,15 @@ public class HomeServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
 		NewsService newsService = new NewsService();
-		List<Map<String, Object>> newsCategoryList = newsService.getNewsCategory();
-		List<Map<String, Object>> publishedNewsList = newsService.getPublishedNews();
+		List<Map<String, Object>> newsCategoryList = null;		// 新闻分类集合
+		List<Map<String, Object>> publishedNewsList = null;		// 所有已发布新闻集合
+		try {
+			newsCategoryList = newsService.getNewsCategory();
+			publishedNewsList = newsService.getPublishedNews();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("newsCategoryList", newsCategoryList);
 		request.setAttribute("publishedNewsList", publishedNewsList);

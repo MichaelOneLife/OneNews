@@ -11,10 +11,10 @@ import lombok.ToString;
  */
 @Getter@Setter@ToString
 public class NewsComment {
-	private Integer id;				//评论ID
-	private Integer userId;			//用户ID
-	private Integer newsId;			//新闻ID
-	private Integer replyId;		//回复评论ID
-	private String content;			//评论内容
-	private String createTime;		//创建时间
+	private Integer id;				// 评论ID
+	private Integer userId;			// 用户ID
+	private Integer newsId;			// 新闻ID
+	private Integer replyId;		// 回复评论ID
+	private String content;			// 评论内容
+	private String createTime;		// 创建时间
 }
