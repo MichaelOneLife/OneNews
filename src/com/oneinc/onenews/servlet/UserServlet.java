@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.beanutils.BeanUtils;
 
 import com.oneinc.onenews.entity.User;
+import com.oneinc.onenews.service.UserService;
+import com.oneinc.onenews.util.CommonUtil;
 
 @WebServlet("/UserServlet")
 public class UserServlet extends BaseServlet {
@@ -27,7 +29,12 @@ public class UserServlet extends BaseServlet {
 		// 将请求参数转换为对象
 		try {
 			BeanUtils.populate(user, parameterMap);
+			// 密码MD5加密
+			String password = CommonUtil.md5(user.getUsername() + user.getPassword());
+			user.setPassword(password);
 			user.setRoleId(1);
+			UserService userService = new UserService();
+			userService.saveUser(user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
