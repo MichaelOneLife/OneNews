@@ -19,9 +19,7 @@ public class NewsDaoImpl implements INewsDao {
 	public News getNewsById(String id) throws SQLException {
 		QueryRunner queryRunner = DBUtil.getQueryRunner();
 		String sql = "SELECT * FROM news_news WHERE id=?";
-		News news = new News();
-		news = queryRunner.query(sql, new BeanHandler<News>(News.class), id);
-		return news;
+		return queryRunner.query(sql, new BeanHandler<News>(News.class), id);
 	}
 
 	@Override
