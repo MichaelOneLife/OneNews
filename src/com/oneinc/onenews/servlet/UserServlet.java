@@ -38,7 +38,7 @@ public class UserServlet extends BaseServlet {
 		try {
 			user.setPhone(phoneNum);
 			user.setUsername(username);
-			user.setPassword(CommonUtil.md5(password));		// 密码MD5加密
+			user.setPassword(CommonUtil.md5(password));		// 密码MD5编码
 			user.setRoleId(1);
 			UserService userService = new UserService();
 			userService.saveUser(user);
@@ -71,6 +71,9 @@ public class UserServlet extends BaseServlet {
 		return "HomeServlet";
 	}
 	
+	/**
+	 * 修改用户信息
+	 */
 	public String modifyUserInfo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Map<String, String[]> parameterMap = request.getParameterMap();
@@ -79,6 +82,7 @@ public class UserServlet extends BaseServlet {
 		// 将请求参数转换为对象
 		try {
 			BeanUtils.populate(user, parameterMap);
+			userService.modifyUserInfo(user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
