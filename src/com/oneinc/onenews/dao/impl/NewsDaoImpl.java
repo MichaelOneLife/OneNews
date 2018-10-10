@@ -13,6 +13,11 @@ import com.oneinc.onenews.dao.INewsDao;
 import com.oneinc.onenews.entity.News;
 import com.oneinc.onenews.util.DBUtil;
 
+/**
+ * 新闻DAO实现
+ * @author michael
+ * @date 2018年10月10日 上午10:34:10
+ */
 public class NewsDaoImpl implements INewsDao {
 
 	@Override
