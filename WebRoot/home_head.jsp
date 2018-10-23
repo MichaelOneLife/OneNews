@@ -21,9 +21,10 @@
 		</div>
 	</div>
     <div id="newsType" class="layui-row">
-    	<ul class="layui-nav layui-bg-green" lay-filter="">
-  			<li class="layui-nav-item">
-  				<a href="${pageContext.request.contextPath }/HomeServlet">首页</a>
+    	<ul class="layui-nav layui-bg-blue" lay-filter="category">
+  			<li class="layui-nav-item layui-this">
+  				<a href="#">首页</a>
+  				<%-- <a href="${pageContext.request.contextPath }/HomeServlet">首页</a> --%>
   			</li>
 	    	<c:forEach items="${newsCategoryList }" var="categoryMap">
 	    		<li class="layui-nav-item">
@@ -34,5 +35,21 @@
     </div>
 </div>
 <script src="${pageContext.request.contextPath }/layui/layui.js"></script>
+<script type="text/javascript">
+	layui.use('layer', function(){
+		var layer = layui.layer;
+	  
+		layer.msg('hello');
+	});   
+ 
+	layui.use('element', function(){
+		var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+		
+		//监听导航点击
+		element.on('nav(category)', function(elem){
+			layer.msg(elem.text());
+		});
+	});
+</script>
 </body>
 </html>
